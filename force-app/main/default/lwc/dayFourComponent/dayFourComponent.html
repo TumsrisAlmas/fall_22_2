@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="ApexWireMethodToProperty" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <!--If we get the response from the apex class.-->
+            <!--
+            <template if:true={contacts.data}>
+                <template for:each={contacts.data} for:item="contact">
+                    <div key={contact.Id}>{contact.FirstName}</div>
+                </template>
+            </template>
+            -->
+            <template for:each={contacts} for:item="contact">
+                <div key={contact.Id}>
+                    <a href={contact.href}>{contact.FirstName}</a>
+                </div>
+            </template>
+
+            <!--If we don'tget the response from the apex class.-->
+            <!--<template if:true={contacts.error}>
+                <div>{contacts.error}</div>
+            </template>-->
+            <template if:true={error}>
+                <div>{error}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

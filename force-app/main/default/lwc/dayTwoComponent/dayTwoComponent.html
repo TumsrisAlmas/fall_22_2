@@ -1,0 +1,102 @@
+<template>
+    Name:&nbsp;
+    <!--(dot) operator to get the values from the Object.-->
+    <lightning-formatted-name
+            first-name={contact.firstName}
+            last-name={contact.lastName}
+            format="short"
+    ></lightning-formatted-name><br/>
+
+    Phone:&nbsp;
+    <lightning-formatted-phone 
+        value={contact.phone}
+    ></lightning-formatted-phone><br/>
+
+    Email:&nbsp;
+    <lightning-formatted-email 
+        value={contact.email} 
+    ></lightning-formatted-email><br/>
+
+    Age:&nbsp;
+    <lightning-formatted-number 
+        value={contact.age}
+    ></lightning-formatted-number><br/>
+
+    Salary:&nbsp;
+    <lightning-formatted-number 
+        value={contact.salary} 
+        format-style="currency" 
+        currency-code="USD"
+    ></lightning-formatted-number><br/>
+
+    <div style="display: inline-flex;">
+        Is Salaried:&nbsp;
+        <lightning-input 
+            type="checkbox" 
+            label="Is Salaried" 
+            name="input1"
+            value={contact.isSalaried}
+        ></lightning-input>
+    </div>
+
+    <hr/>
+    <!--Handling Array of Elements-->
+    <template for:each={contactlist} for:item="contact" >
+        <div key={contact.email}>
+                    Name:&nbsp;
+            <!--(dot) operator to get the values from the Object.-->
+            <lightning-formatted-name
+                    first-name={contact.firstName}
+                    last-name={contact.lastName}
+                    format="short"
+            ></lightning-formatted-name><br/>
+
+            Phone:&nbsp;
+            <lightning-formatted-phone 
+                value={contact.phone}
+            ></lightning-formatted-phone><br/>
+
+            Email:&nbsp;
+            <lightning-formatted-email 
+                value={contact.email} 
+            ></lightning-formatted-email><br/>
+
+            Age:&nbsp;
+            <lightning-formatted-number 
+                value={contact.age}
+            ></lightning-formatted-number><br/>
+
+            Salary:&nbsp;
+            <lightning-formatted-number 
+                value={contact.salary} 
+                format-style="currency" 
+                currency-code="USD"
+            ></lightning-formatted-number><br/>
+
+            <div style="display: inline-flex;">
+                Is Salaried:&nbsp;
+                <lightning-input 
+                    type="checkbox" 
+                    label="Is Salaried" 
+                    name="input1"
+                    value={contact.isSalaried}
+                ></lightning-input>
+            </div>
+        </div>
+    </template>
+</template>
+
+<!--
+
+    Assignment 1:
+    Create a UI for your personal Business card, which will display:
+    First Name, Last Name, 
+    Phone 
+    Email
+
+    Address
+
+    Assignment 2:
+    Desing a UI to diplay list of 
+    Resurants near you along with top 5 foods that they offer and Location
+-->

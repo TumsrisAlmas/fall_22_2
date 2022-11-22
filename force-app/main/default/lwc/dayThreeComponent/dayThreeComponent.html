@@ -1,0 +1,25 @@
+<template>
+    <lightning-card  title="Day Three Component">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <lightning-input 
+                type="text" 
+                label="Enter First Name" 
+                onchange={handleFirstName}
+            ></lightning-input>
+            <lightning-input 
+                type="text" 
+                label="Enter Last Name"
+                onchange={handleLastName}
+            ></lightning-input>
+        </div>
+        <div slot="footer">
+            FullName: {fullName}
+        </div>
+    </lightning-card>
+
+    <!--Assignment: CALCULATOR
+        Create two input fields of type number.
+        Do Sum, Subtract, Multiplication and Division, and show the result.
+    -->
+</template>
