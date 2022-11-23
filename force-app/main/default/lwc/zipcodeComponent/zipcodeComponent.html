@@ -1,0 +1,22 @@
+<template>
+    <lightning-card  title="Address Info">
+        <div class="slds-p-horizontal_small">
+            <lightning-input 
+                type="text" 
+                label="Enter Zip Code"
+                onchange={handleZipCode}
+            ></lightning-input>
+            SELECTED CONTACT: 
+            <lightning-formatted-name 
+                        first-name={selectedContact.FirstName} 
+                        last-name={selectedContact.LastName}
+                    ></lightning-formatted-name>
+
+            <hr/>
+            <c-address-component 
+                zip-code={zipCodeFromInput}
+                oncontactselcted={handleContactSelected}
+            ></c-address-component><!-- Kebab Case, ON we need to add prefix for Handle the custom event -->
+        </div>
+    </lightning-card>
+</template>

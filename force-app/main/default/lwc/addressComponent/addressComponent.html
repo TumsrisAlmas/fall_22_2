@@ -1,0 +1,28 @@
+<template>
+    <template for:each={contactAddresses} for:item="contact" for:index="index">
+        <div key={contact.Id}>
+            <lightning-card title="Address Info">
+                <lightning-button 
+                    label="Choose Contact" 
+                    slot="actions"
+                    onclick={handleButtonClick}
+                    data-index={index}
+                ></lightning-button>
+
+                <div class="slds-p-horizontal_small">
+                    <lightning-formatted-name 
+                        first-name={contact.FirstName} 
+                        last-name={contact.LastName}
+                    ></lightning-formatted-name>
+                    <lightning-formatted-address 
+                        street={contact.MailingStreet} 
+                        city={contact.MailingCity}
+                        country={contact.MailingCountry} 
+                        province={contact.MailingState} 
+                        postal-code={zipCode}
+                    ></lightning-formatted-address>
+                </div>
+            </lightning-card>
+        </div>
+    </template>
+</template>
