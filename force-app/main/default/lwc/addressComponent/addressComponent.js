@@ -3,13 +3,15 @@ import getAddress from '@salesforce/apex/AddressController.getAddress';
 
 
 export default class AddressComponent extends LightningElement {
+
+    //c/helloWorld
     @api zipCode; //Receiver.
     @track contactAddresses;
     @track error; //Decorator
     @track selectedContact;
     @track selectedIndex;
 
-    @wire(getAddress, {zipCode:'$zipCode'}) //Parameterized wire method, meaning its sending data or info to the Apex controller.
+    @wire(getAddress, { zipCode: '$zipCode' }) //Parameterized wire method, meaning its sending data or info to the Apex controller.
     wiredContacts({ error, data }) {
         if (data) {
             console.log('DATA', data);
@@ -22,7 +24,7 @@ export default class AddressComponent extends LightningElement {
         }
     }
 
-    handleButtonClick(event) { 
+    handleButtonClick(event) {
         console.log('INDEX', event.target.dataset.index);
         this.selectedIndex = event.target.dataset.index;
 
@@ -36,8 +38,7 @@ export default class AddressComponent extends LightningElement {
 
         // Creates the event with the contact ID data.
         const selectedEvent = new CustomEvent(
-            'contactselcted',
-            {
+            'contactselcted', {
                 detail: this.contactAddresses[this.selectedIndex]
             });
 
