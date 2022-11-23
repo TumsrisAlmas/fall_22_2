@@ -4,8 +4,7 @@ import getAddress from '@salesforce/apex/AddressController.getAddress';
 
 export default class AddressComponent extends LightningElement {
 
-    //c/helloWorld
-    //onemore change
+
     @api zipCode; //Receiver.
     @track contactAddresses;
     @track error; //Decorator
