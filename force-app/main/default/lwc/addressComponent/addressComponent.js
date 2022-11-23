@@ -3,7 +3,7 @@ import getAddress from '@salesforce/apex/AddressController.getAddress';
 
 
 export default class AddressComponent extends LightningElement {
-    //name changes
+
 
     @api zipCode; //Receiver.
     @track contactAddresses;
